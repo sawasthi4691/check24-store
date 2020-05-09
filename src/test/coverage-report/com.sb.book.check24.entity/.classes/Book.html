@@ -1,0 +1,204 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Book</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.sb.book.check24.entity</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Book (com.sb.book.check24.entity)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Book</td>
+<td class="coverageStat">
+  <span class="percent">
+    46.2%
+  </span>
+  <span class="absValue">
+    (6/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    63.6%
+  </span>
+  <span class="absValue">
+    (21/ 33)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Book$HibernateProxy$DBZD1L9d</td>
+  </tr>
+  <tr>
+    <td class="name">Book$HibernateProxy$NB7zpuyb</td>
+  </tr>
+  <tr>
+    <td class="name">Book$HibernateProxy$oHFohGZM</td>
+  </tr>
+  <tr>
+    <td class="name">Book$HibernateProxy$UyMC1ViA</td>
+  </tr>
+  <tr>
+    <td class="name">Book$HibernateProxy$v4Jx1V9u</td>
+  </tr>
+  <tr>
+    <td class="name">Book$HibernateProxy$yB2gAcvM</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    46.2%
+  </span>
+  <span class="absValue">
+    (6/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    63.6%
+  </span>
+  <span class="absValue">
+    (21/ 33)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.sb.book.check24.entity;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javax.persistence.*;
+<i>4</i>&nbsp;import java.io.Serializable;
+<i>5</i>&nbsp;import java.math.BigDecimal;
+<i>6</i>&nbsp;import java.util.Set;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;@Table(name = &quot;TBL_BOOKS&quot;)
+<i>9</i>&nbsp;@Entity
+<i>10</i>&nbsp;public class Book implements Serializable {
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    @Id
+<i>13</i>&nbsp;    @Column(name = &quot;BOOK_ID&quot;, nullable = false, unique = true)
+<i>14</i>&nbsp;    private String bookId;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    @Column(name = &quot;BOOK_NAME&quot;)
+<i>17</i>&nbsp;    private String bookName;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    @Column(name = &quot;DETAILS&quot;)
+<i>20</i>&nbsp;    private String details;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    @Column(name = &quot;PRICE&quot;)
+<i>23</i>&nbsp;    private BigDecimal price;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    @Column(name = &quot;IMAGE_URL&quot;)
+<i>26</i>&nbsp;    private String imageUrl;
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    @OneToMany(fetch = FetchType.LAZY,
+<i>30</i>&nbsp;            cascade = CascadeType.ALL)
+<i>31</i>&nbsp;    private Set&lt;BookViews&gt; bookViews;
+<i>32</i>&nbsp;
+<b class="fc"><i>33</i>&nbsp;    public Book() {</b>
+<b class="fc"><i>34</i>&nbsp;    }</b>
+<i>35</i>&nbsp;
+<b class="fc"><i>36</i>&nbsp;    public Book(String bookId, String bookName, String details, BigDecimal price, String imageUrl) {</b>
+<b class="fc"><i>37</i>&nbsp;        this.bookId = bookId;</b>
+<b class="fc"><i>38</i>&nbsp;        this.bookName = bookName;</b>
+<b class="fc"><i>39</i>&nbsp;        this.details = details;</b>
+<b class="fc"><i>40</i>&nbsp;        this.price = price;</b>
+<b class="fc"><i>41</i>&nbsp;        this.imageUrl = imageUrl;</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    public String getBookId() {
+<b class="fc"><i>45</i>&nbsp;        return bookId;</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    public void setBookId(String bookId) {
+<b class="nc"><i>49</i>&nbsp;        this.bookId = bookId;</b>
+<b class="nc"><i>50</i>&nbsp;    }</b>
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    public String getBookName() {
+<b class="fc"><i>53</i>&nbsp;        return bookName;</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    public void setBookName(String bookName) {
+<b class="nc"><i>57</i>&nbsp;        this.bookName = bookName;</b>
+<b class="nc"><i>58</i>&nbsp;    }</b>
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    public String getDetails() {
+<b class="nc"><i>61</i>&nbsp;        return details;</b>
+<i>62</i>&nbsp;    }
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;    public void setDetails(String details) {
+<b class="nc"><i>65</i>&nbsp;        this.details = details;</b>
+<b class="nc"><i>66</i>&nbsp;    }</b>
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    public BigDecimal getPrice() {
+<b class="fc"><i>69</i>&nbsp;        return price;</b>
+<i>70</i>&nbsp;    }
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    public void setPrice(BigDecimal price) {
+<b class="nc"><i>73</i>&nbsp;        this.price = price;</b>
+<b class="nc"><i>74</i>&nbsp;    }</b>
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;    public String getImageUrl() {
+<b class="nc"><i>77</i>&nbsp;        return imageUrl;</b>
+<i>78</i>&nbsp;    }
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    public void setImageUrl(String imageUrl) {
+<b class="nc"><i>81</i>&nbsp;        this.imageUrl = imageUrl;</b>
+<b class="nc"><i>82</i>&nbsp;    }</b>
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;    @Override
+<i>85</i>&nbsp;    public String toString() {
+<b class="fc"><i>86</i>&nbsp;        final StringBuilder sb = new StringBuilder(&quot;Book{&quot;);</b>
+<b class="fc"><i>87</i>&nbsp;        sb.append(&quot;bookId=&#39;&quot;).append(bookId).append(&#39;\&#39;&#39;);</b>
+<b class="fc"><i>88</i>&nbsp;        sb.append(&quot;, bookName=&#39;&quot;).append(bookName).append(&#39;\&#39;&#39;);</b>
+<b class="fc"><i>89</i>&nbsp;        sb.append(&quot;, details=&#39;&quot;).append(details).append(&#39;\&#39;&#39;);</b>
+<b class="fc"><i>90</i>&nbsp;        sb.append(&quot;, price=&quot;).append(price);</b>
+<b class="fc"><i>91</i>&nbsp;        sb.append(&quot;, imageUrl=&#39;&quot;).append(imageUrl).append(&#39;\&#39;&#39;);</b>
+<b class="fc"><i>92</i>&nbsp;        sb.append(&quot;, bookViews=&quot;).append(bookViews);</b>
+<b class="fc"><i>93</i>&nbsp;        sb.append(&#39;}&#39;);</b>
+<b class="fc"><i>94</i>&nbsp;        return sb.toString();</b>
+<i>95</i>&nbsp;    }
+<i>96</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-19 09:27</div>
+</div>
+</body>
+</html>
